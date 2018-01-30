@@ -1,0 +1,26 @@
+{% extends '@App/base.html.twig' %}
+
+{% block body %}
+    <h1>Competence</h1>
+    <table>
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ competence.id }}</td>
+        </tr>
+        <tr>
+            <th>Competences</th>
+            <td>{{ competence.competences }}</td>
+        </tr>
+        <tr>
+            <th>Valeur</th>
+            <td>{{ competence.valeur }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <ul>
+        <li>
+            <a href="{{ path('competences_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

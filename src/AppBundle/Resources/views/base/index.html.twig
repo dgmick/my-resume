@@ -1,0 +1,44 @@
+{% extends '@App/base.html.twig' %}
+
+{% block title %} Présentation {% endblock %}
+
+{% block body %}
+
+
+    <h2 align="center">À propos de moi</h2>
+    <hr>
+
+    <div class="btn-group btn-group-justified">
+        <a href="{{ asset('fichier/Mickael Lutin CV .docx') }}" class="btn btn-info">Telecharger Mon CV</a>
+    </div>
+    <br>
+    {% for descrip in description %}
+        <p>  {{ descrip.introduction|nl2br  }}</p>
+    {% endfor %}
+    </p><br>
+
+
+    <h2 align="center"> Compétences : WEB / AUTRES </h2>
+    <hr>
+
+    {% for competence in competencesList %}
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar"
+                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{ competence.valeur }}%">
+                {{ competence.competences }}
+            </div>
+        </div>
+    {% endfor %}<br>
+
+    <h2 align="center"> Centres D’Interet </h2>
+    <hr>
+    <ul>
+        <li> Sport : Boxe thaï | Jiu-Jitsu Brésilien | un peu de muscalation.</li>
+        <li> Loisirs : Voyager | Informatique | lire et regarder des Mangas.</li>
+    </ul>
+
+
+{% endblock %}
+
+
+

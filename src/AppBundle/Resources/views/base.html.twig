@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="{{ asset('animated_favicon1.gif') }}" />
+
+
+    <title>{% block title %} Présentation{% endblock %}</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="{{ asset('css/slidefolio.css') }}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+</head>
+<body>
+<!-- Header Area -->
+<div id="top" class="header">
+    <div class="vert-text">
+        <a href="{{ path('homepage') }}"><img class="img-rounded" alt="Company Logo"
+                                              src="{{ asset('img/profile.jpg') }}" height="150"/></a>
+        <h2><em>Lutin Mickael</em></h2>
+        <h4><em>Developpeur Web Junior</em></h4>
+        <img src="{{ asset('img/html.png') }}" height="45"/>
+        <img src="{{ asset('img/js.png') }}" height="45"/>
+        <img src="{{ asset('img/css.png') }}" height="45"/>
+        <img src="{{ asset ('img/php.png') }}" height="45"/>
+        <img src="{{ asset('img/symfony.png') }}" height="45"/>
+        <img src="{{ asset('img/mysql.png') }}" height="45"/><br><br>
+        <a href="{{ asset('fichier/Mickael Lutin CV .pdf') }}" class="btn btn-top">Afficher mon Cv</a>
+    </div>
+</div>
+<!-- /Header Area -->
+<div id="nav">
+    <!-- Navigation -->
+    <nav class="navbar navbar-new" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mobilemenu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">Développeur Web</a>
+            </div>
+            <div class="collapse navbar-collapse" id="mobilemenu">
+
+                <ul class="nav navbar-nav navbar-right text-center">
+                    <li><a href="{{ path('homepage') }}"><i class="service-icon fa fa-home"></i>&nbsp;Home</a></li>
+                    <li><a href="{{ path('formation') }}"><i class="service-icon fa fa-book"></i>&nbsp;Formation</a>
+                    </li>
+                    <li><a href="{{ path('experience') }}"><i class="service-icon fa fa-laptop"></i>&nbsp;Experience</a>
+                    </li>
+                    <li><a href="{{ path('contact') }}"><i class="service-icon fa fa-envelope"></i>&nbsp;Contact</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <!-- /Navigation -->
+</div>
+<!-- About -->
+
+<!-- /About -->
+<!-- Services -->
+<div id="services" class="services">
+    <div class="container">
+
+        <div class="row">
+            {% block body %}{% endblock %}
+
+            {% block experience %}{% endblock %}
+
+        </div>
+    </div>
+</div>
+<!-- /Services -->
+
+<!-- Portfolio -->
+<div id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="row push50">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <h2>Mon Portfolio</h2>
+                <h3>
+                    <span class="filter label label-default" data-filter="all">ALL</span>
+                    <span class="filter label label-default" data-filter="production">Productions</span>
+                    <span class="filter label label-default" data-filter="work">Work</span>
+                    <span class="filter label label-default" data-filter="hobies">Hobies</span>
+                </h3>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="gallery">
+
+                <ul id="Grid" class="gcontainer">
+                    <!--portofolio start-->
+
+                    <!--portofolio start-->
+                    <li class="col-md-4 col-sm-4 col-xs-12 mix work" data-cat="work">
+                        <a data-toggle="modal" data-target="#portrait5" class="mix-cover">
+                            <img class="horizontal" src="{{ asset('img/lieu de travaille.jpg') }}" alt="placeholder">
+                            <span class="overlay"><span class="valign"></span><span
+                                        class="title">Lieu de travail</span></span>
+                        </a>
+                    </li>
+                    <!--portofolio end-->
+                    <!--portofolio full screem start-->
+                    <div class="modal fade" id="portrait5" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                            aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title text-center">Lieu de travail</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="thumbnail" alt="Portrait1"
+                                         src="{{ asset('img/lieu de travaille.jpg') }}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--portofolio full screem end-->
+
+                    <!--portofolio start-->
+                    <li class="col-md-4 col-sm-4 col-xs-12 mix work" data-cat="work">
+                        <a data-toggle="modal" data-target="#portrait1" class="mix-cover">
+                            <img class="horizontal" src="{{ asset('img/portrait1.JPG') }}" alt="placeholder">
+                            <span class="overlay"><span class="valign"></span><span
+                                        class="title">Work</span></span>
+                        </a>
+                    </li>
+                    <!--portofolio end-->
+                    <!--portofolio full screem start-->
+                    <div class="modal fade" id="portrait1" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                            aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title text-center">Work</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="thumbnail" alt="Portrait1" src="{{ asset('img/portrait1.JPG') }}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--portofolio full screem end-->
+
+
+
+                    <!--portofolio start-->
+                    <li class="col-md-4 col-sm-4 col-xs-12 mix hobies" data-cat="hobies">
+                        <a data-toggle="modal" data-target="#jjb1" class="mix-cover">
+                            <img class="horizontal" src="{{ asset('img/jjb1.jpg') }}" alt="placeholder">
+                            <span class="overlay"><span class="valign"></span><span
+                                        class="title">Jiu Jitsu Brésilien</span></span>
+                        </a>
+                    </li>
+                    <!--portofolio end-->
+                    <!--portofolio full screem start-->
+                    <div class="modal fade" id="jjb1" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                            aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title text-center">Jiu Jitsu Brésilien</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="thumbnail" alt="hobies" src="{{ asset('img/jjb1.jpg') }}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--portofolio full screem end-->
+
+
+                    <!--portofolio start-->
+                    <li class="col-md-4 col-sm-4 col-xs-12 mix hobies" data-cat="hobies">
+                        <a data-toggle="modal" data-target="#competition" class="mix-cover">
+                            <img class="horizontal" src="{{ asset('img/competition.JPG') }}" alt="placeholder">
+                            <span class="overlay"><span class="valign"></span><span
+                                        class="title">Compétiteur</span></span>
+                        </a>
+                    </li>
+                    <!--portofolio end-->
+                    <!--portofolio full screem start-->
+                    <div class="modal fade" id="competition" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                            aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title text-center">Compétiteur</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="thumbnail" alt="hobies" src="{{ asset('img/competition.JPG') }}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--portofolio full screem end-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Portfolio -->
+
+
+<!-- style star -->
+
+<div id="style">
+
+
+</div>
+<!-- /style end-->
+
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <h3>Réseaux Sociaux</h3>
+                <ul class="list-inline">
+                    <li><a href="https://www.facebook.com/mickael.lutin" class="fa fa-facebook fa-2x"></a></li>
+                    <li><a href="https://www.instagram.com/dgwaner/" class="fa fa-instagram fa-2x"></a></li>
+                    <li><a href="https://plus.google.com/u/0/100076345393472834268" class="fa fa-google-plus fa-2x"></a>
+                    </li>
+                    <li><a href="https://www.linkedin.com/in/mickael-lutin-41357392/" class="fa fa-linkedin fa-2x"></a>
+                    </li>
+                    <li><a href="https://github.com/dgmick" class="fa fa-github fa-2x"></a></li>
+                </ul>
+
+                <em><i class="fa fa-location-arrow"></i> 148 Avenue Jean Jaures 93500, Pantin
+                    <i class="fa fa-phone"></i> Tel: 06.45.95.38.56
+                    <i class="fa fa-envelope"></i>Email : lutmickael@gmail.com
+                </em>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- /Footer -->
+<!-- Bootstrap core JavaScript -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ asset('js/jquery.js') }}"></script>
+<script src="{{ asset('js/jquery-scrolltofixed-min.js') }}"></script>
+<script src="{{ asset('js/jquery.vegas.js') }}"></script>
+<script src="{{ asset('js/jquery.mixitup.min.js') }}"></script>
+<script src="{{ asset('js/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('js/script.js') }}"></script>
+<script src="{{ asset('js/bootstrap.js') }}"></script>
+
+<!-- Slideshow Background  -->
+<script>
+    $.vegas('slideshow', {
+        delay: 5000,
+        backgrounds: [
+            {src: './img/lieu de travaille.jpg', fade: 2000},
+            {src: './img/portrait2.jpg', fade: 2000}
+
+        ]
+    })('overlay', {
+        src: './img/overlay.png'
+    });
+
+</script>
+<!-- /Slideshow Background -->
+
+<!-- Mixitup : Grid -->
+<script>
+    $(function () {
+        $('#Grid').mixitup();
+    });
+</script>
+<!-- /Mixitup : Grid -->
+
+<!-- Custom JavaScript for Smooth Scrolling - Put in a custom JavaScript file to clean this up -->
+<script>
+    $(function () {
+        $('a[href*=#]:not([href=#])').click(function () {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+                    || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+</script>
+<!-- Navbar -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#nav').scrollToFixed();
+    });
+</script>
+<!-- /Navbar-->
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{% extends '@App/page.html.twig' %}
+
+{% block title %}Description : {{ detailExperience.entreprise }}{% endblock %}
+
+{% block body %}
+    <div class="col-md-4 col-md-offset-4 text-center">
+        <h2> Expériences : {{ detailExperience.image.nom }}</h2>
+        <hr>
+        <img src=" {{ asset(detailExperience.image.url) }} " class="img-rounded" height="150"/><br><br>
+
+        <h3 class="rouge">Description de l'activité :</h3>
+        <p align="left">{{ detailExperience.description }}</p>
+
+        <a href="{{ path('experience') }}">
+            <button class="btn btn-experience"> Retour Page Formation</button>
+        </a>
+    </div>
+
+{% endblock %}
+

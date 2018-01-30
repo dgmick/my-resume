@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="{{ asset('animated_favicon1.gif') }}" />
+
+    <title>{% block title %}Lutin Mickael CV{% endblock %}</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="{{ asset('css/slidefolio.css') }}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+
+</head>
+<body>
+
+
+<div id="services" class="services">
+            {% block body %}{% endblock %}
+</div>
+
+
+
+
+
+
+</body>
+
+</html>

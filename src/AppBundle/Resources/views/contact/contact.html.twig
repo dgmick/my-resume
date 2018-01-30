@@ -1,0 +1,78 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block title %} Contact {% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <h2>Me Contacter</h2>
+                <hr>
+                <h4> Pour toutes demandes de questions ou propositions professionnelles, n’hésitez pas à me contacter.
+                    Vous pouvez utiliser le formulaire de contact ci-dessous. </h4>
+            </div>
+            <div class="col-md-5 col-md-offset-3">
+
+                <!-- contact form starts -->
+                <div class="rouge" > {% for flashMessage in app.session.flashbag.get('success') %}
+                        {{ flashMessage }}
+                    {% endfor %}</div><br>
+
+                <div id="contact-form" class="form-horizontal">
+                    {{ form_start(contact) }}
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label" for="subject">Sujet *</label>
+                            <div class="col-sm-8">
+                                {{ form_widget(contact.objets) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label" for="name">Nom et Prenom * </label>
+                            <div class="col-sm-8">
+                                {{ form_widget(contact.name) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label" for="email">Email *</label>
+                            <div class="col-sm-8">
+                                {{ form_widget(contact.email) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label" for="message">Votre Message *</label>
+                            <div class="col-sm-8">
+                                {{ form_widget(contact.message) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label" for="spam">Anti-spam : 1+1 ? *</label>
+                            <div class="col-sm-8">
+                                <input id="spam" placeholder="Résultat ?" pattern="2" required >
+                            </div>
+                        </div>
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <button type="submit" class="btn btn-success">Envoyer</button>
+                            <button type="reset" class="btn btn-primary">Supprimer</button>
+                        </div>
+                    </fieldset>
+                    {{ form_end(contact) }}
+                </div>
+                <!-- contact form ends -->
+            </div>
+
+            <div class="col-lg-4">
+                <ul>
+                    <li><i class="fa fa-location-arrow"></i> Adresse : 148 Avenue Jean Jaures, 93500 Pantin</li>
+                    <li><i class="fa fa-phone"></i> Telephone : 06.45.95.38.56</li>
+                    <li><i class="fa fa-envelope"></i> Email : lutmickael@gmail.com</li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+{% endblock %}
+
+

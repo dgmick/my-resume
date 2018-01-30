@@ -1,0 +1,41 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block title %} Formation {% endblock %}
+
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+
+            <h2 align="center"> Mes Formations </h2>
+            <hr>
+
+
+            <table class="table table-bordered table-striped table-condensed">
+
+                <thead>
+                <tr>
+                    <th>Années</th>
+                    <th>Diplômes</th>
+                    <th>Illustration</th>
+
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for formation in formationList %}
+                    <tr>
+                        <td>{{ formation.annee }}</td>
+                        <td>{{ formation.diplomes }}</td>
+                        <td><a href="{{ path ('image',{'formation':formation.id}) }}">
+                                <button type="button" class="btn btn-experience">Diplôme</button>
+                            </a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

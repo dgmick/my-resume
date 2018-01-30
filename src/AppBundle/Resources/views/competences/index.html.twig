@@ -1,0 +1,34 @@
+{% extends '@App/base.html.twig' %}
+
+{% block body %}
+    <h1>Competences list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Competences</th>
+                <th>Valeur</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for competence in competences %}
+            <tr>
+                <td><a href="{{ path('competences_show', { 'id': competence.id }) }}">{{ competence.id }}</a></td>
+                <td>{{ competence.competences }}</td>
+                <td>{{ competence.valeur }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('competences_show', { 'id': competence.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

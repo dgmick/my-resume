@@ -1,0 +1,48 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block title %} Expérience {% endblock %}
+
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+
+            <h2 align="center">Mon Experience</h2>
+            <hr>
+
+
+            <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                <tr>
+                    <th>Période</th>
+                    <th>Emploie</th>
+                    <th>Ville</th>
+                    <th>Contrat</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for experience in experienceList %}
+                    <tr>
+                        <td>{{ experience.annees }}</td>
+                        <td>{{ experience.entreprise }}</td>
+                        <td>{{ experience.ville }}</td>
+                        <td>{{ experience.contrat }}</td>
+                        <td><a href="{{ path ('experience-detail',{'experience':experience.id}) }}">
+                                <button type="button" class="btn btn-experience">Description Ici</button>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
+
